@@ -6,11 +6,11 @@ const uri = process.env.MONGODB_URI;
 const connectDB = async () => {
   try {
     // Connect to the MongoDB cluster
-    await mongoose.connect(uri, {
-      useUnifiedTopology: true,
-    });
+    // await mongoose.connect(uri, {
+    //   useUnifiedTopology: true,
+    // });
 
-    console.log("MongoDB Connected...");
+    console.log("MongoDB Connected...",uri);
   } catch (error) {
     console.error("MongoDB connection error:", error);
     process.exit(1);
