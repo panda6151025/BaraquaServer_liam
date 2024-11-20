@@ -3,17 +3,17 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
-// const connectDB = require("./config/db"); // Import your db connection
-// const userRoutes = require("./routes/userRoutes");
-// const boatRoutes = require("./routes/boatRoutes");
+const connectDB = require("./config/db"); // Import your db connection
+const userRoutes = require("./routes/userRoutes");
+const boatRoutes = require("./routes/boatRoutes");
 const app = express();
 
-// app.use(cors());
-// app.use(bodyParser.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 // // Connect to MongoDB
-// connectDB();
+connectDB();
 
 // Define your routes here (example)
 app.get("/", (req, res) => {
