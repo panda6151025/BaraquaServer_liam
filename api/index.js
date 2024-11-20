@@ -13,11 +13,11 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 // // Connect to MongoDB
-// connectDB();
+connectDB();
 
 // Define your routes here (example)
 app.get("/", (req, res) => {
-  res.send(process.env.MONGODB_URI);
+  res.send("API is running...");
 });
 
 // app.use("/api/users", userRoutes);
