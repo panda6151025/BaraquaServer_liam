@@ -38,27 +38,27 @@ exports.loginUser = async (req, res) => {
   const { email, password } = req.params; // Get email and password from URL parameters
 
   try {
-  //   const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email });
 
-  //   if (!existingUser) {
-  //     return res.json({
-  //       flag: false,
-  //       sort: "email",
-  //       error: "Unregistered user",
-  //     });
-  //   }
+    // if (!existingUser) {
+    //   return res.json({
+    //     flag: false,
+    //     sort: "email",
+    //     error: "Unregistered user",
+    //   });
+    // }
 
-  //   const isMatch = await bcrypt.compare(password, existingUser.password);
+    // const isMatch = await bcrypt.compare(password, existingUser.password);
 
-  //   if (!isMatch) {
-  //     return res.json({
-  //       flag: false,
-  //       sort: "password",
-  //       error: "Incorrect password",
-  //     });
-  //   }
+    // if (!isMatch) {
+    //   return res.json({
+    //     flag: false,
+    //     sort: "password",
+    //     error: "Incorrect password",
+    //   });
+    // }
 
-    res.json({ flag: true, email });
+    res.json({ flag: true, existingUser });
   } catch (error) {
     res.json({ flag: false, sort: "general", error: "Server error" });
   }
